@@ -10,6 +10,12 @@ import { ListarComponent } from './vistas/clientes/listar/listar.component';
 import { EliminarComponent } from './vistas/clientes/eliminar/eliminar.component';
 import { BuscarComponent } from './vistas/clientes/buscar/buscar.component';
 
+import { UsuariosindexComponent } from './vistas/usuarios/index/usuariosindex/usuariosindex.component';
+import { UsuariosbuscarComponent } from './vistas/usuarios/buscar/usuariosbuscar/usuariosbuscar.component';
+import { UsuarioseditarComponent } from './vistas/usuarios/editar/usuarioseditar/usuarioseditar.component';
+import { UsuarioseliminarComponent } from './vistas/usuarios/eliminar/usuarioseliminar/usuarioseliminar.component';
+import { UsuariosnuevoComponent } from './vistas/usuarios/nuevo/usuariosnuevo/usuariosnuevo.component';
+import { UsuariosListarComponent } from './vistas/usuarios/lista/usuarios-listar/usuarios-listar.component';
 
 const routes: Routes = [
   {path: '' , redirectTo:'Login' , pathMatch:'full'},
@@ -20,7 +26,13 @@ const routes: Routes = [
   {path:'ClienteEditar/:id' , component:EditarComponent},
   {path:'ClienteListar/:id' , component:ListarComponent},
   {path:'ClienteEliminar/:id' , component:EliminarComponent},
-  {path:'ClienteBuscar/:id' , component:BuscarComponent}
+  {path:'ClienteBuscar/:id' , component:BuscarComponent},
+  {path:'UsuarioIndex' , component:UsuariosindexComponent},
+  {path:'UsuarioNuevo' , component:UsuariosnuevoComponent},
+  {path:'UsuarioEditar/:id' , component:UsuarioseditarComponent},
+  {path:'UsuarioListar/:id' , component:UsuariosListarComponent},
+  {path:'UsuarioEliminar/:id' , component:UsuarioseliminarComponent},
+  {path:'UsuarioBuscar/:id' , component:UsuariosbuscarComponent}
 ];
 
 @NgModule({
@@ -29,4 +41,8 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents = [LoginComponent,DashboardComponent,NuevoComponent,EditarComponent,ListarComponent,EliminarComponent,BuscarComponent,IndexComponent]
+export const routingComponents = [LoginComponent,DashboardComponent
+  ,NuevoComponent,EditarComponent,ListarComponent,EliminarComponent,BuscarComponent,IndexComponent
+,UsuariosindexComponent,UsuariosnuevoComponent,UsuarioseditarComponent,UsuariosListarComponent,UsuarioseliminarComponent
+,UsuariosbuscarComponent
+]
