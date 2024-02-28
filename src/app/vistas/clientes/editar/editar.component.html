@@ -1,0 +1,100 @@
+<app-header></app-header>
+
+<div class="container">
+  <h1>Crear Cliente</h1>
+
+  <a  routerLink="/ClienteIndex" class="btn btn-primary">Back</a>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="form-group">
+          <label for="Nombres">Nombres:</label>
+          <input
+              formControlName="cli_NOMBRES"
+              id="title"
+              type="text"
+              class="form-control">
+          <div *ngIf="f['cLi_NOMBRES'].touched && f['cLi_NOMBRES'].invalid" class="alert alert-danger">
+              <div *ngIf="f['cLi_NOMBRES'].errors && f['cLi_NOMBRES'].errors['required']">Title is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="Correo">Correo</label>
+          <textarea
+              formControlName="clI_CORREO"
+              id="body"
+              type="text"
+              class="form-control">
+          </textarea>
+          <div *ngIf="f['cli_CORREO'].touched && f['cli_CORREO'].invalid" class="alert alert-danger">
+              <div *ngIf="f['cli_CORREO'].errors && f['cli_CORREO'].errors['required']">Body is required.</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Celular">Celular</label>
+        <textarea
+            formControlName="cli_CELULAR"
+            id="body"
+            type="text"
+            class="form-control">
+        </textarea>
+        <div *ngIf="f['cli_CELULAR'].touched && f['cli_CELULAR'].invalid" class="alert alert-danger">
+            <div *ngIf="f['cli_CELULAR'].errors && f['cli_CELULAR'].errors['required']">Body is required.</div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="Direccion">Direccion</label>
+      <textarea
+          formControlName="cli_DIRECCION"
+          id="body"
+          type="text"
+          class="form-control">
+      </textarea>
+      <div *ngIf="f['cli_DIRECCION'].touched && f['cli_DIRECCION'].invalid" class="alert alert-danger">
+          <div *ngIf="f['cli_DIRECCION'].errors && f['cli_DIRECCION'].errors['required']">Body is required.</div>
+      </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="Ciudad">Ciudad</label>
+    <textarea
+        formControlName="cli_CIUDAD_ID"
+        id="body"
+        type="text"
+        class="form-control">
+    </textarea>
+    <div *ngIf="f['cli_CIUDAD_ID'].touched && f['cli_CIUDAD_ID'].invalid" class="alert alert-danger">
+        <div *ngIf="f['cli_CIUDAD_ID'].errors && f['cli_CIUDAD_ID'].errors['required']">Body is required.</div>
+    </div>
+</div>
+
+
+<div class="form-group">
+  <label for="Estado">Estado</label>
+  <textarea
+      formControlName="cli_ESTADO"
+      id="body"
+      type="text"
+      class="form-control">
+  </textarea>
+  <div *ngIf="f['cli_ESTADO'].touched && f['cli_ESTADO'].invalid" class="alert alert-danger">
+      <div *ngIf="f['cli_ESTADO'].errors && f['cli_ESTADO'].errors['required']">Body is required.</div>
+  </div>
+</div>
+
+
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Actualizar</button>
+  </form>
+</div>
+
+
+
+
+
+
+<app-footer></app-footer>

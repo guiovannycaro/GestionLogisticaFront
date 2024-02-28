@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="container">
+  <h1>Clientes </h1>
+
+  <a href="#" routerLink="/ClienteNuevo" class="btn btn-success">Create New Post</a>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Nombres</th>
+      <th>Correo</th>
+      <th>Celular</th>
+      <th>Direcciom</th>
+      <th>Ciudad</th>
+      <th>Estado</th>
+      <th width="220px">Accion</th>
+    </tr>
+
+    <tr *ngFor="let i of posts">
+      <td>{{i.cli_ID }}</td>
+      <td>{{i.cli_NOMBRES}}</td>
+      <td>{{i.cli_CORREO}}</td>
+      <td>{{i.cli_CELULAR}}</td>
+      <td>{{i.cli_DIRECCION}}</td>
+      <td>{{i.cli_CIUDAD_ID}}</td>
+      <td>{{i.clI_ESTADO}}</td>
+      <td>
+        <a href="#" routerLink="/ClienteListar/{{i.cli_ID}}" class="btn btn-info">Ver</a>
+        <a href="#" routerLink="/ClienteEditar/{{i.cli_ID}}" class="btn btn-primary">Editar</a>
+        <button type="button" (click)="deletePost(i.cli_ID)" class="btn btn-danger">Eliminar</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+
+<app-footer></app-footer>
