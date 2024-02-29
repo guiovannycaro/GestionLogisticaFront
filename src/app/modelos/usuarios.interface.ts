@@ -8,4 +8,7 @@ export interface UsuariosI {
   usu_PASSWORD:  string;
   usu_TDOC_ID: number;
   usu_ROL_ID: number;
+  usu_ESTADO:number;
+
+  constructor();
 }

@@ -1,1 +1,95 @@
-<p>usuariosnuevo works!</p>
+<app-header></app-header>
+
+
+<div class="container">
+  <h1>Crear Usuarios</h1>
+  <a  routerLink="/UsuarioIndex" class="btn btn-primary">Back</a>
+
+
+  <form  (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+          <label for="Nombres">Nombres:</label>
+          <input   type="text"  class="form-control"   id="usu_NOMBRES" name= "usu_NOMBRES" [(ngModel)]="usuarios.usu_NOMBRES">
+
+      </div>
+
+      <div class="form-group">
+          <label for="Direccion">Direccion</label>
+
+          <input   type="text"  class="form-control"   id="usu_DIRECCION" name= "usu_DIRECCION" [(ngModel)]="usuarios.usu_DIRECCION">
+
+
+      </div>
+
+      <div class="form-group">
+        <label for="Telefono">Telefono</label>
+
+        <input   type="text"  class="form-control"   id="usu_TELEFONO" name= "usu_TELEFONO" [(ngModel)]="usuarios.usu_TELEFONO">
+
+
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="Correo">Correo</label>
+      <input   type="text"  class="form-control"   id="usu_CORREO" name= "usu_CORREO" [(ngModel)]="usuarios.usu_CORREO">
+
+
+
+  </div>
+
+  <div class="form-group">
+    <label for="PASSWORD">Contraseña</label>
+    <input   type="text"  class="form-control"   id="usu_PASSWORD" name= "usu_PASSWORD" [(ngModel)]="usuarios.usu_PASSWORD">
+
+
+
+
+</div>
+
+
+<div class="form-group">
+  <label for="TDOC_ID">Tipo Documento</label>
+  <input   type="text"  class="form-control"   id="usu_TDOC_ID" name= "usu_TDOC_ID" [(ngModel)]="usuarios.usu_TDOC_ID">
+
+
+
+
+</div>
+
+  <div class="form-group">
+    <label for="NUMDOCUMENTO">Numero Documento</label>
+    <input   type="text"  class="form-control"   id="usu_NUMDOCUMENTO" name= "usu_NUMDOCUMENTO" [(ngModel)]="usuarios.usu_NUMDOCUMENTO">
+
+
+</div>
+
+
+<div class="form-group">
+  <label for="Rol">Rol</label>
+  <input   type="text"  class="form-control"   id="usu_ROL_ID" name= "usu_ROL_ID" [(ngModel)]="usuarios.usu_ROL_ID">
+
+
+
+
+</div>
+
+<div class="form-group">
+  <label for="Estado">Estado</label>
+
+  <input   type="text"  class="form-control"   id="usu_ESTADO" name= "usu_ESTADO" [(ngModel)]="usuarios.usu_ESTADO">
+
+
+
+</div>
+
+
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+
+
+<app-footer></app-footer>
+
