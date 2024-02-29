@@ -10,6 +10,7 @@ import { UsuariosindexComponent } from './vistas/usuarios/index/usuariosindex/us
 import { ReactiveFormsModule,FormsModule} from  '@angular/forms';
 import {HttpClientModule} from  '@angular/common/http';
 import { LoginComponent } from './vistas/login/login.component';
+import { RegistrarseComponent } from './vistas/registrarse/registrarse/registrarse.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { LoginComponent } from './vistas/login/login.component';
     routingComponents,
     IndexComponent,
     UsuariosindexComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrarseComponent
   ],
   imports: [
     BrowserModule,

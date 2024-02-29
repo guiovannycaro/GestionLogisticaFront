@@ -1,8 +1,8 @@
-<app-header></app-header>
+
 
 
 <div class="container">
-  <h1>Editar Usuarios</h1>
+  <h1>Crear Usuarios</h1>
   <a  routerLink="/UsuarioIndex" class="btn btn-primary">Back</a>
 
 
@@ -69,7 +69,7 @@
 
 <div class="form-group">
   <label for="Rol">Rol</label>
-  <input   type="text"  class="form-control"   id="usu_ROL_ID" name= "usu_ROL_ID" [(ngModel)]="usuarios.usu_ROL_ID">
+  <input   type="text"  readonly="true" class="form-control"   id="usu_ROL_ID" name= "usu_ROL_ID" [(ngModel)]="usuarios.usu_ROL_ID">
 
 
 
@@ -79,7 +79,7 @@
 <div class="form-group">
   <label for="Estado">Estado</label>
 
-  <input   type="text"  class="form-control"   id="usu_ESTADO" name= "usu_ESTADO" [(ngModel)]="usuarios.usu_ESTADO">
+  <input   type="text" readonly="true"  class="form-control"  value="1" id="usu_ESTADO" name= "usu_ESTADO" [(ngModel)]="usuarios.usu_ESTADO">
 
 
 
@@ -89,8 +89,5 @@
       <button class="btn btn-primary" type="submit">Submit</button>
   </form>
 </div>
-
-
-<app-footer></app-footer>
 
 

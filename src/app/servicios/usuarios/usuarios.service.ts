@@ -10,8 +10,12 @@ import { Usuarios } from 'src/app/modelos/usuarios';
 export class UsuariosService {
 
   private baseUrl = "http://localhost:8080/getion/";
+  id: number;
+  constructor(private http: HttpClient) {
+    this.id =0;
 
-  constructor(private http: HttpClient) { }
+  }
+
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,4 +37,30 @@ export class UsuariosService {
     return response;
 
    }
+
+   getusuarioById(data:any): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "CrudUsuarios/ListarUsuariosById?id=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
+   actualizarUsuarios(usuarios: Usuarios): Observable<any>{
+    let direccion = this.baseUrl + "/CrudUsuarios/actualizarUsuario";
+    let response = this.http.post<any>(direccion,usuarios);
+    console.log(response);
+    return response;
+   }
+
+   eliminarusuario(data:any): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "CrudUsuarios/EliminarUsuario?id=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
 }

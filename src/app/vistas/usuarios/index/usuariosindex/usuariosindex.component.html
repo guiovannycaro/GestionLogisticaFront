@@ -28,12 +28,11 @@
       <td>{{i.usu_NUMDOCUMENTO}}</td>
       <td>{{i.usu_ROL_ID}}</td>
       <td>
-        <a href="#" routerLink="/UsuarioListar/{{i.usu_ID}}" class="btn btn-info">Ver</a>
-        <a href="#" routerLink="/UsuarioEditar/{{i.usu_ID}}" class="btn btn-primary">Editar</a>
-        <button type="button"  class="btn btn-danger">Eliminar</button>
+        <button type="button" (click)="verUsuarios(i.usu_ID)"  class="btn btn-danger">Ver</button>
+        <button type="button" (click)="actualizarUsuarios(i.usu_ID)"  class="btn btn-danger">Editar</button>
+        <button type="button" (click)="eliminarUsuarios(i.usu_ID)"  class="btn btn-danger">Eliminar</button>
       </td>
     </tr>
-
   </table>
 </div>
 

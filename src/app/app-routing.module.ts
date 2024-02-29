@@ -16,7 +16,7 @@ import { UsuarioseditarComponent } from './vistas/usuarios/editar/usuarioseditar
 import { UsuarioseliminarComponent } from './vistas/usuarios/eliminar/usuarioseliminar/usuarioseliminar.component';
 import { UsuariosnuevoComponent } from './vistas/usuarios/nuevo/usuariosnuevo/usuariosnuevo.component';
 import { UsuariosListarComponent } from './vistas/usuarios/lista/usuarios-listar/usuarios-listar.component';
-
+import {RegistrarseComponent } from './vistas/registrarse/registrarse/registrarse.component';
 const routes: Routes = [
   {path: '' , redirectTo:'Login' , pathMatch:'full'},
   {path:'Login' , component:LoginComponent},
@@ -32,7 +32,10 @@ const routes: Routes = [
   {path:'UsuarioEditar/:id' , component:UsuarioseditarComponent},
   {path:'UsuarioListar/:id' , component:UsuariosListarComponent},
   {path:'UsuarioEliminar/:id' , component:UsuarioseliminarComponent},
-  {path:'UsuarioBuscar/:id' , component:UsuariosbuscarComponent}
+  {path:'UsuarioBuscar/:id' , component:UsuariosbuscarComponent},
+  {path:'Registrarse' , component:RegistrarseComponent}
+
+
 ];
 
 @NgModule({
@@ -44,5 +47,5 @@ export class AppRoutingModule { }
 export const routingComponents = [LoginComponent,DashboardComponent
   ,NuevoComponent,EditarComponent,ListarComponent,EliminarComponent,BuscarComponent,IndexComponent
 ,UsuariosindexComponent,UsuariosnuevoComponent,UsuarioseditarComponent,UsuariosListarComponent,UsuarioseliminarComponent
-,UsuariosbuscarComponent
+,UsuariosbuscarComponent,RegistrarseComponent
 ]

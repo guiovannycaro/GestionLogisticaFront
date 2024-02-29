@@ -11,7 +11,7 @@ import { UsuariosI } from 'src/app/modelos/usuarios.interface';
 export class UsuariosindexComponent  implements OnInit{
 
   usuarios: UsuariosI[]=[];
-   constructor(private usService:UsuariosService) {}
+   constructor(private usService:UsuariosService,private ruta:Router) {}
 
   ngOnInit(): void {
      this.getUsuarios();
@@ -25,4 +25,16 @@ private getUsuarios(){
 });
 
   }
+
+  actualizarUsuarios(data:any){
+this.ruta.navigate(['/UsuarioEditar',data]);
+  }
+
+  verUsuarios(data:any){
+    this.ruta.navigate(['/UsuarioListar',data]);
+      }
+
+  eliminarUsuarios(data:any){
+        this.ruta.navigate(['/UsuarioEliminar',data]);
+          }
 }
