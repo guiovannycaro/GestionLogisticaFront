@@ -46,7 +46,7 @@ export class ClientesService {
    getClientesById(data:any): Observable<any>{
 
     console.log("parametro a enviar " + data)
-    let direccion = this.baseUrl + "/CrudClientes/buscarClientesById?id=" + data;
+    let direccion = this.baseUrl + "/CrudClientes/ListarClientesById?id=" + data;
     let response = this.http.get<any>(direccion);
     console.log(response);
     return response;

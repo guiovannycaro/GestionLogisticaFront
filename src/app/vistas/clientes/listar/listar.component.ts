@@ -13,7 +13,9 @@ export class ListarComponent   implements OnInit{
   id!: number;
   clientes: Clientes = new Clientes();
 
-
+  constructor (private api:ClientesService,private router:Router ,private parametro:ActivatedRoute){
+    this.id = 0;
+  }
 
   ngOnInit(): void {
     this.id = this.parametro.snapshot.params['id'];
@@ -26,9 +28,7 @@ export class ListarComponent   implements OnInit{
 
   }
 
-  constructor (private api:ClientesService,private router:Router ,private parametro:ActivatedRoute){
-    this.id = 0;
-  }
+
 
 
 

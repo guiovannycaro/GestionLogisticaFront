@@ -40,7 +40,7 @@ login(datos:any):Observable<any> {
 
 
  getAllClientes():Observable<any>{
-     let direccion = this.url + "clientes/CrudClientes/ListarClientes";
+     let direccion = this.url + "/CrudClientes/ListarClientes";
      let response = this.http.get<any>(direccion,this.httpOptions);
      console.log(response);
     return response;
