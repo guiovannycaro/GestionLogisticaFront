@@ -25,11 +25,18 @@ export class IndexComponent implements OnInit{
     this.getClientes();
   }
 
-  deletePost(data:any){
-    this.api.eliminarCliente(data).subscribe(res => {
-         this.posts = this.posts.filter(item => item.cli_ID !== data);
-         console.log('Post deleted successfully!');
-    })
-  }
+
+
+  actualizarCliente(data:any){
+    this.router.navigate(['/ClienteEditar',data]);
+      }
+
+      verCliente(data:any){
+        this.router.navigate(['/ClienteListar',data]);
+          }
+
+      eliminarCliente(data:any){
+            this.router.navigate(['/ClienteEliminar',data]);
+              }
 
 }

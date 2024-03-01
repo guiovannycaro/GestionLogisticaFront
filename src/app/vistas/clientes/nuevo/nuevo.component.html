@@ -6,90 +6,53 @@
   <a  routerLink="/ClienteIndex" class="btn btn-primary">Back</a>
 
 
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form  (ngSubmit)="onSubmit()">
 
       <div class="form-group">
           <label for="Nombres">Nombres:</label>
-          <input
-              formControlName="cli_NOMBRES"
-              id="title"
-              type="text"
-              class="form-control">
-          <div *ngIf="f['cli_NOMBRES'].touched && f['cli_NOMBRES'].invalid" class="alert alert-danger">
-              <div *ngIf="f['cli_NOMBRES'].errors && f['cli_NOMBRES'].errors['required']">Title is required.</div>
-          </div>
+
+          <input   type="text"  class="form-control"   id="cli_NOMBRES" name= "cli_NOMBRES" [(ngModel)]="clientes.cli_NOMBRES">
+
       </div>
 
       <div class="form-group">
           <label for="Correo">Correo</label>
-          <input
-              formControlName="cli_CORREO"
-              id="body"
-              type="text"
-              class="form-control">
 
-          <div *ngIf="f['cli_CORREO'].touched && f['cli_CORREO'].invalid" class="alert alert-danger">
-              <div *ngIf="f['cli_CORREO'].errors && f['cli_CORREO'].errors['required']">Body is required.</div>
-          </div>
+          <input   type="text"  class="form-control"   id="cli_CORREO" name= "cli_CORREO" [(ngModel)]="clientes.cli_CORREO">
+
       </div>
 
       <div class="form-group">
         <label for="Celular">Celular</label>
-        <input
-            formControlName="cli_CELULAR"
-            id="body"
-            type="text"
-            class="form-control">
 
-        <div *ngIf="f['cli_CELULAR'].touched && f['cli_CELULAR'].invalid" class="alert alert-danger">
-            <div *ngIf="f['cli_CELULAR'].errors && f['cli_CELULAR'].errors['required']">Body is required.</div>
-        </div>
+        <input   type="text"  class="form-control"   id="cli_CELULAR" name= "cli_CELULAR" [(ngModel)]="clientes.cli_CELULAR">
+
     </div>
 
 
     <div class="form-group">
       <label for="Direccion">Direccion</label>
-      <input
-          formControlName="Ccli_DIRECCION"
-          id="body"
-          type="text"
-          class="form-control">
+      <input   type="text"  class="form-control"   id="cli_DIRECCION" name= "cli_DIRECCION" [(ngModel)]="clientes.cli_DIRECCION">
 
-      <div *ngIf="f['cli_DIRECCION'].touched && f['cli_DIRECCION'].invalid" class="alert alert-danger">
-          <div *ngIf="f['cli_DIRECCION'].errors && f['cli_DIRECCION'].errors['required']">Body is required.</div>
-      </div>
   </div>
 
 
   <div class="form-group">
     <label for="Ciudad">Ciudad</label>
-    <input
-        formControlName="cli_CIUDAD_ID"
-        id="body"
-        type="text"
-        class="form-control">
+    <input   type="text"  class="form-control"   id="cli_CIUDAD_ID" name= "cli_CIUDAD_ID" [(ngModel)]="clientes.cli_CIUDAD_ID">
 
-    <div *ngIf="f['cli_CIUDAD_ID'].touched && f['cli_CIUDAD_ID'].invalid" class="alert alert-danger">
-        <div *ngIf="f['cli_CIUDAD_ID'].errors && f['cli_CIUDAD_ID'].errors['required']">Body is required.</div>
-    </div>
 </div>
 
 
 <div class="form-group">
   <label for="Estado">Estado</label>
-  <input
-      formControlName="cli_ESTADO"
-      id="body"
-      type="text"
-      class="form-control">
 
-  <div *ngIf="f['cli_ESTADO'].touched && f['cli_ESTADO'].invalid" class="alert alert-danger">
-      <div *ngIf="f['cli_ESTADO'].errors && f['cli_ESTADO'].errors['required']">Body is required.</div>
-  </div>
+  <input   type="text"  class="form-control"   id="cli_ESTADO" name= "cli_ESTADO" [(ngModel)]="clientes.clI_ESTADO">
+
 </div>
 
 
-      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+<button class="btn btn-primary" type="submit">Submit</button>
   </form>
 </div>
 

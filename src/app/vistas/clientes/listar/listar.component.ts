@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { ClientesI } from '../../../modelos/clientes.interfaces'
-import { ApiService } from 'src/app/servicios/api/api.service';
+import { Clientes } from '../../../modelos/clientes';
+import { ClientesService } from 'src/app/servicios/clientes/clientes.service';
 
 @Component({
   selector: 'app-listar',
@@ -11,17 +11,27 @@ import { ApiService } from 'src/app/servicios/api/api.service';
 })
 export class ListarComponent   implements OnInit{
   id!: number;
-  post!: ClientesI;
-  constructor(private api:ApiService,private router:Router,   private route: ActivatedRoute){}
+  clientes: Clientes = new Clientes();
+
+
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['postId'];
+    this.id = this.parametro.snapshot.params['id'];
+    console.log("parametro proveniente del index " + this.id);
+  this.api.getClientesById(this.id).subscribe(data=>{
+    this.clientes = data;
+    console.log(this.clientes);
+  },error => console.log(error));
 
-    this.api.find(this.id).subscribe((data: ClientesI)=>{
-      this.post = data;
-      console.log(this.post);
-    });
+
   }
+
+  constructor (private api:ClientesService,private router:Router ,private parametro:ActivatedRoute){
+    this.id = 0;
+  }
+
+
+
 
 
 }

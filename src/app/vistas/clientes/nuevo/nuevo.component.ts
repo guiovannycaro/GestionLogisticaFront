@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { ClientesI } from '../../../modelos/clientes.interfaces'
-import { ApiService } from 'src/app/servicios/api/api.service';
+import { ClientesService } from 'src/app/servicios/clientes/clientes.service';
+import { Clientes } from 'src/app/modelos/clientes';
 @Component({
   selector: 'app-nuevo',
   templateUrl: './nuevo.component.html',
@@ -11,9 +11,9 @@ import { ApiService } from 'src/app/servicios/api/api.service';
 export class NuevoComponent implements OnInit{
 
   form!: FormGroup;
-  posts: ClientesI[] = [];
+  clientes: Clientes  = new Clientes();
 
-  constructor(private api:ApiService,private router:Router){}
+  constructor(private api:ClientesService,private router:Router){}
 
   ngOnInit(): void {
 
@@ -27,25 +27,25 @@ export class NuevoComponent implements OnInit{
     return this.form.controls;
   }
 
-  onSubmit(){
 
-    this.commitCli();
-  }
+  saveClientes(){
+    this.api.createClientes(this.clientes).subscribe(data =>{
+              console.log(data);
+              this.goToClientesList();
+               },
+               error => console.log(error)
+          );
+     }
 
-  commitCli(){
+     goToClientesList(){
+      this.router.navigate(['/ClienteIndex']);
+    }
 
-    this.api.createCliente(this.posts).subscribe(
-      (res:any) => { this.router.navigateByUrl('/ClienteIndex');}
-    );
+    onSubmit(){
+      console.log(this.clientes);
+      this.saveClientes();
+   }
 
 
-  }
-
-
-
-  //Redirección a lista de usuarios
-  redirectUserList(){
-    this.router.navigate(['/ClienteIndex']);
-  }
 
 }

@@ -26,9 +26,9 @@
       <td>{{i.cli_CIUDAD_ID}}</td>
       <td>{{i.clI_ESTADO}}</td>
       <td>
-        <a href="#" routerLink="/ClienteListar/{{i.cli_ID}}" class="btn btn-info">Ver</a>
-        <a href="#" routerLink="/ClienteEditar/{{i.cli_ID}}" class="btn btn-primary">Editar</a>
-        <button type="button" (click)="deletePost(i.cli_ID)" class="btn btn-danger">Eliminar</button>
+        <button type="button" (click)="verCliente(i.cli_ID)"  class="btn btn-danger">Ver</button>
+        <button type="button" (click)="actualizarCliente(i.cli_ID)"  class="btn btn-danger">Editar</button>
+        <button type="button" (click)="eliminarCliente(i.cli_ID)"  class="btn btn-danger">Eliminar</button>
       </td>
     </tr>
 

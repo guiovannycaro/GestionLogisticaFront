@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable , throwError} from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
-import {ClientesI} from '../../modelos/clientes.interfaces';
+import {Clientes} from '../../modelos/clientes';
 import {ResponceI} from '../../modelos/response.interface';
 import { catchError } from 'rxjs/operators';
 
@@ -13,7 +13,13 @@ import { catchError } from 'rxjs/operators';
 })
 export class ClientesService {
 
-  constructor(private http: HttpClient) { }
+
+  private baseUrl = "http://localhost:8080/getion";
+  id: number;
+  constructor(private http: HttpClient) {
+    this.id =0;
+
+  }
 
 
   httpOptions = {
@@ -22,4 +28,45 @@ export class ClientesService {
     })
   }
 
+  getClientesList(): Observable<any>{
+    let direccion = this.baseUrl + "/CrudClientes/ListarClientes";
+    let response = this.http.get<any>(direccion,this.httpOptions);
+    console.log(response);
+    return response;
+  }
+
+   createClientes(clientes: Clientes): Observable<any>{
+    let direccion = this.baseUrl + "/CrudClientes/crearClientes";
+    let response = this.http.post<any>(direccion,clientes);
+    console.log(response);
+    return response;
+
+   }
+
+   getClientesById(data:any): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "/CrudClientes/buscarClientesById?id=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
+   actualizarClientes(clientes: Clientes): Observable<any>{
+    let direccion = this.baseUrl + "/CrudClientes/editarClientes";
+    let response = this.http.post<any>(direccion,clientes);
+    console.log(response);
+    return response;
+   }
+
+   eliminarClientes(data:any): Observable<any>{
+
+    console.log("parametro a enviar " + data)
+    let direccion = this.baseUrl + "/CrudClientes/eliminarClientes?id=" + data;
+    let response = this.http.get<any>(direccion);
+    console.log(response);
+    return response;
+   }
+
 }
+

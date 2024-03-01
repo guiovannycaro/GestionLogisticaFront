@@ -1,45 +1,60 @@
 <app-header></app-header>
 
-<div class="container">
-  <h1>Listar Post</h1>
 
+<div class="container">
+  <h1>Crear Cliente</h1>
   <a  routerLink="/ClienteIndex" class="btn btn-primary">Back</a>
 
-  <div>
-      <strong>ID:</strong>
-      <p>{{ post.cli_ID }}</p>
+
+  <form  >
+
+      <div class="form-group">
+          <label for="Nombres">Nombres:</label>
+
+          <input   type="text" readonly="true" class="form-control"   id="cli_NOMBRES" name= "cli_NOMBRES" [(ngModel)]="clientes.cli_NOMBRES">
+
+      </div>
+
+      <div class="form-group">
+          <label for="Correo">Correo</label>
+
+          <input   type="text" readonly="true" class="form-control"   id="cli_CORREO" name= "cli_CORREO" [(ngModel)]="clientes.cli_CORREO">
+
+      </div>
+
+      <div class="form-group">
+        <label for="Celular">Celular</label>
+
+        <input   type="text"  readonly="true" class="form-control"   id="cli_CELULAR" name= "cli_CELULAR" [(ngModel)]="clientes.cli_CELULAR">
+
+    </div>
+
+
+    <div class="form-group">
+      <label for="Direccion">Direccion</label>
+      <input   type="text"  readonly="true" class="form-control"   id="cli_DIRECCION" name= "cli_DIRECCION" [(ngModel)]="clientes.cli_DIRECCION">
+
   </div>
 
-  <div>
-      <strong>Title:</strong>
-      <p>{{ post.cli_NOMBRES }}</p>
-  </div>
 
-  <div>
-      <strong>Body:</strong>
-      <p>{{ post.cli_CORREO }}</p>
-  </div>
-
-  <div>
-    <strong>Body:</strong>
-    <p>{{ post.cli_CELULAR }}</p>
-</div>
-
-<div>
-  <strong>Body:</strong>
-  <p>{{ post.cli_DIRECCION }}</p>
-</div>
-
-<div>
-  <strong>Body:</strong>
-  <p>{{ post.cli_CIUDAD_ID }}</p>
-</div>
-
-<div>
-  <strong>Body:</strong>
-  <p>{{ post.clI_ESTADO }}</p>
-</div>
+  <div class="form-group">
+    <label for="Ciudad">Ciudad</label>
+    <input   type="text"  readonly="true" class="form-control"   id="cli_CIUDAD_ID" name= "cli_CIUDAD_ID" [(ngModel)]="clientes.cli_CIUDAD_ID">
 
 </div>
+
+
+<div class="form-group">
+  <label for="Estado">Estado</label>
+
+  <input   type="text" readonly="true" class="form-control"   id="cli_ESTADO" name= "cli_ESTADO" [(ngModel)]="clientes.clI_ESTADO">
+
+</div>
+
+
+
+  </form>
+</div>
+
 
 <app-footer></app-footer>

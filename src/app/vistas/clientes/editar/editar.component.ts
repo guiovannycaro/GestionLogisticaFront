@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
-import { ClientesI } from '../../../modelos/clientes.interfaces'
-import { ApiService } from 'src/app/servicios/api/api.service';
+import { Clientes } from '../../../modelos/clientes';
+import { ClientesService } from 'src/app/servicios/clientes/clientes.service';
 
 @Component({
   selector: 'app-editar',
@@ -10,35 +10,41 @@ import { ApiService } from 'src/app/servicios/api/api.service';
   styleUrls: ['./editar.component.css']
 })
 export class EditarComponent  implements OnInit{
-  id!: number;
-  post!: ClientesI;
-  form!: FormGroup;
+  id: number;
+  clientes: Clientes = new Clientes();
 
-  constructor(private api:ApiService,private router:Router,   private route: ActivatedRoute){}
+  constructor(private api:ClientesService,private router:Router,   private route: ActivatedRoute ,private parametro:ActivatedRoute){
+    this.id = 0;
+  }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['postId'];
-    this.api.find(this.id).subscribe((data: ClientesI)=>{
-      this.post = data;
-    });
+    this.id = this.parametro.snapshot.params['id'];
+    console.log("parametro proveniente del index " + this.id);
+  this.api.getClientesById(this.id).subscribe(data=>{
+    this.clientes = data;
+    console.log(this.clientes);
+  },error => console.log(error));
 
-this.form = new FormGroup({
-  title: new FormControl('', [Validators.required]),
-  body: new FormControl('', Validators.required)
-});
 
-}
+  }
 
-get f(){
-  return this.form.controls;
-}
+  actualisaUsuarios(){
+    this.api.actualizarClientes(this.clientes).subscribe(data =>{
+              console.log(data);
+              this.goToClientesList();
+               },
+               error => console.log(error)
+          );
+     }
 
-submit(){
-  console.log(this.form.value);
-  this.api.editarCliente(this.id, this.form.value).subscribe((res:any) => {
-       console.log('Post updated successfully!');
-       this.router.navigateByUrl('index');
-  })
-}
+     goToClientesList(){
+       this.router.navigate(['/ClienteIndex']);
+     }
+
+  onSubmit(){
+
+    console.log(this.clientes);
+    this.actualisaUsuarios();
+  }
 
 }

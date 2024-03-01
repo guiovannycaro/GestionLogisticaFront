@@ -4,6 +4,8 @@ import { Usuarios } from 'src/app/modelos/usuarios';
 import { UsuariosService } from 'src/app/servicios/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-usuarioseditar',
   templateUrl: './usuarioseditar.component.html',
