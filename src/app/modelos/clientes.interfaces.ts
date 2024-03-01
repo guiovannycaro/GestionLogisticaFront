@@ -5,6 +5,6 @@ export interface ClientesI{
   cli_DIRECCION:string;
   cli_CIUDAD_ID:Number;
   cli_NOMBRES:string;
-  clI_ESTADO:Number;
+  cli_ESTADO:Number;
 
 }

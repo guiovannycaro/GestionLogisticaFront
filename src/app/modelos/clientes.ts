@@ -6,7 +6,7 @@ export class Clientes{
   cli_DIRECCION:string;
   cli_CIUDAD_ID:Number;
   cli_NOMBRES:string;
-  clI_ESTADO:Number;
+  cli_ESTADO:Number;
 
 
 
@@ -17,7 +17,7 @@ export class Clientes{
     this.cli_DIRECCION = "";
     this.cli_CIUDAD_ID = 0;
     this.cli_NOMBRES = "";
-    this.clI_ESTADO = 0;
+    this.cli_ESTADO = 0;
 
   }
 }
